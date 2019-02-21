@@ -14,7 +14,7 @@ def index():
 
     title = 'Home- Welcome to Music Lyrics'
     form = PostForm()
-   
+
     return render_template('index.html', form=form)
 
 @main.route('/user/<uname>')
@@ -25,6 +25,12 @@ def account(uname):
         abort(404)
 
     return render_template("profile/profile.html", user = user)
+
+
+@main.route('/results', methods=['GET','POST'])
+def results():
+
+    return render_template('results.html',)
 
 
 
@@ -61,7 +67,7 @@ def account(uname):
 
 # @main.route('/post/<category>')
 # def post(category):
-    
+
 #     posts= None
 #     if category == 'all':
 #         posts = Post.query.order_by(Post.date.desc())
@@ -72,22 +78,22 @@ def account(uname):
 
 # @main.route('/post/<post_id>/add/comment', methods = ['GET','POST'])
 # def comment(post_id):
-   
+
 #     post = Post.query.filter_by(id = post_id).first()
 #     form = CommentForm()
 
 #     if form.validate_on_submit():
 #         body = form.body.data
-      
+
 #         new_comment = Comment(body=body)
 #         new_comment.save_comment()
-        
+
 #         return redirect(url_for("main.show_comments",post_id = post_id))
 #     return render_template("comment.html", form = form, post = post)
 
 # @main.route('/<int:post_id>/comments')
 # def show_comments(post_id):
-    
+
 #     comments = None
 
 #     post = Post.query.filter_by(id = post_id).first()
@@ -105,14 +111,14 @@ def account(uname):
 
 #     if user is None:
 #         abort(404)
-      
+
 #     if form.validate_on_submit():
 #         title = form.title.data
 #         body = form.post.data
-#         category = form.category.data 
+#         category = form.category.data
 #         dateNow = datetime.datetime.now()
 #         date = str(dateNow)
-    
+
 
 #         add_post = Post(title = title,body=body,category=category,date=date)
 #         add_post.save_post()
@@ -138,7 +144,7 @@ def account(uname):
 #         post.title = form.title.data
 #         post.post = form.post.data
 #         db.session.commit()
-       
+
 #         return redirect(url_for('main.index'))
 #     elif request.method == 'GET':
 #         form.title.data = post.title
@@ -161,6 +167,3 @@ def account(uname):
 #        return redirect(url_for('main.index'))
 #        title = 'Subscribe'
 #    return render_template('subscribe.html',subscribe_form=form)
-
-
- 

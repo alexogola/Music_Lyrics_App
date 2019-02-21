@@ -28,9 +28,9 @@
         <p style="color: #ffffff; font-family: 'Josefin Sans', sans-serif; font-size: 18px;"><a href="{{url_for('auth.register')}}" class="mid-nav">Register &nbsp;<i class="fas fa-user-plus"></i></a> |
 
           {% if current_user.is_authenticated %}
-          <a href="{{url_for('auth.logout')}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Log Out</a>
+          <a href="{{url_for('auth.logout')}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Sign Out</a>
           {%else%}
-          <a href="{{url_for('auth.login')}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Log In</a>
+          <a href="{{url_for('auth.login')}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Sign In</a>
           {%endif%}
           {% if current_user.is_authenticated %}
           <a href="{{url_for('main.account',uname=current_user.username)}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Profile</a></p>
@@ -38,7 +38,7 @@
         <h3 style="text-align: center; font-family: 'Dancing Script', cursive; text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff; font-size: 36px;">Search Your Lyrics</h3>
         <form action="">
           <input type="search">
-        <a href="{{url_for('main.results')}}"><i class="fa fa-search"></i></a>
+        <a href="#"><i class="fa fa-search"></i></a>
         </form>
       </div>
       <div class="col-md-4"></div>
