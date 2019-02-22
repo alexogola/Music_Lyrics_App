@@ -32,9 +32,6 @@
           {%else%}
           <a href="{{url_for('auth.login')}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Log In</a>
           {%endif%}
-          {% if current_user.is_authenticated %}
-          <a href="{{url_for('main.account',uname=current_user.username)}}" class="mid-nav"><i class="fas fa-sign-in-alt"></i> &nbsp;Profile</a></p>
-        {%endif%}
         <h3 style="text-align: center; font-family: 'Dancing Script', cursive; text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff; font-size: 36px;">Search Your Lyrics</h3>
         <form action="">
           <input type="search">
